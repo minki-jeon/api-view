@@ -26,5 +26,4 @@ public class BootController {
 		
 		return sample;
 	}
-	
 }
