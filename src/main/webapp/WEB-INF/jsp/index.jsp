@@ -41,6 +41,15 @@
 	  * Author: BootstrapMade.com
 	  * License: https://bootstrapmade.com/license/
 	  ======================================================== -->
+	  
+	  <style>
+	  	.hero .sign-up-form input[type=text] {
+		    background-color: transparent;
+		    border: 0;
+		    padding: 4px 10px;
+		    width: 100%;
+		}
+	  </style>
 	</head>
 	<body class="index-page">
 
@@ -94,21 +103,35 @@
 	    <!-- Hero Section -->
 	    <section id="hero" class="hero section dark-background">
 	
-	      <img src="template/assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+	      <img src="img/cygnus_1920.jpg" alt="" data-aos="fade-in">
 	
 	      <div class="container">
 	        <div class="row">
 	          <div class="col-lg-10">
 	            <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Our Website</h2>
-	            <p data-aos="fade-up" data-aos-delay="200">We are team of talented designers making websites with Bootstrap</p>
+	            <p data-aos="fade-up" data-aos-delay="200">아래 캐릭터 닉네임을 입력하세요</p>
 	          </div>
 	          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
-	            <form action="forms/newsletter.php" method="post" class="php-email-form">
-	              <div class="sign-up-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+	            <form action="" id="nameForm" method="get" class="php-email-form">
+	            
+	            <!-- TODO. Search 버튼 클릭 시, about 섹션 이동 -->
+	              <div class="sign-up-form"><input type="text" name="text" id="chName">
+	              	<a href="#about">
+	              		<input type="submit" id="search" value="Search">
+	              	</a>
+	              </div>
+<!-- 	            
 	              <div class="loading">Loading</div>
 	              <div class="error-message"></div>
 	              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+-->	              
 	            </form>
+	            
+	            
+	            
+	            
+	            
+	            
 	          </div>
 	        </div>
 	      </div>
@@ -117,7 +140,7 @@
 	
 	    <!-- Clients Section -->
 	    <section id="clients" class="clients section">
-	
+			<!-- TODO. 메이플 관련 api 및 커뮤니티 등 사이트 링크 -->
 	      <div class="container" data-aos="fade-up">
 	
 	        <div class="row gy-4">
@@ -154,54 +177,30 @@
 	
 	    <!-- About Section -->
 	    <section id="about" class="about section light-background">
-	
+			<!-- TODO. 검색 시, 해당 섹션에 캐릭터 정보 출력 -->
 	      <div class="container" data-aos="fade-up" data-aos-delay="100">
 	        <div class="row align-items-xl-center gy-5">
 	
-	          <div class="col-xl-5 content">
-	            <h3>About Us</h3>
-	            <h2>Ducimus rerum libero reprehenderit cumque</h2>
-	            <p>Ipsa sint sit. Quis ducimus tempore dolores impedit et dolor cumque alias maxime. Enim reiciendis minus et rerum hic non. Dicta quas cum quia maiores iure. Quidem nulla qui assumenda incidunt voluptatem tempora deleniti soluta.</p>
-	            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-	          </div>
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+     				 <img src="#" alt="" class="img-fluid services-img" id="characterImg">          
+                 	 <h3 id = "characterName">닉네임</h3>
 	
-	          <div class="col-xl-7">
-	            <div class="row gy-4 icon-boxes">
+				     <li><strong>레벨</strong>: &nbsp <span id = "characterLevel">레벨</span></li>
+				     <li><strong>생성일자</strong>: &nbsp <span id = "characterDate">생성일자</span></li>
+     
+                 	 <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor voluptatem</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-8" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="bi bi-buildings"></i>
+                  <h3>Eius provident</h3>
+                  <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor voluptatem</p>
+                </div>
+              </div> <!-- End Icon Box -->
 	
-	              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-	                <div class="icon-box">
-	                  <i class="bi bi-buildings"></i>
-	                  <h3>Eius provident</h3>
-	                  <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor voluptatem</p>
-	                </div>
-	              </div> <!-- End Icon Box -->
-	
-	              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-	                <div class="icon-box">
-	                  <i class="bi bi-clipboard-pulse"></i>
-	                  <h3>Rerum aperiam</h3>
-	                  <p>Autem saepe animi et aut aspernatur culpa facere. Rerum saepe rerum voluptates quia</p>
-	                </div>
-	              </div> <!-- End Icon Box -->
-	
-	              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-	                <div class="icon-box">
-	                  <i class="bi bi-command"></i>
-	                  <h3>Veniam omnis</h3>
-	                  <p>Omnis perferendis molestias culpa sed. Recusandae quas possimus. Quod consequatur corrupti</p>
-	                </div>
-	              </div> <!-- End Icon Box -->
-	
-	              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-	                <div class="icon-box">
-	                  <i class="bi bi-graph-up-arrow"></i>
-	                  <h3>Delares sapiente</h3>
-	                  <p>Sint et dolor voluptas minus possimus nostrum. Reiciendis commodi eligendi omnis quideme lorenda</p>
-	                </div>
-	              </div> <!-- End Icon Box -->
-	
-	            </div>
-	          </div>
 	
 	        </div>
 	      </div>
@@ -210,7 +209,7 @@
 	
 	    <!-- Stats Section -->
 	    <section id="stats" class="stats section dark-background">
-	
+			<!-- TODO. 정보 출력 (EX. 1위 레벨+경험치 / 주화가격 / 1위 전투력 / 유니온1위랭킹 / 무릉도장랭킹 / 길드1위수로점수 / 헥사랭킹 -->
 	      <img src="template/assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
 	
 	      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
@@ -1122,16 +1121,18 @@
 	  
 	  
 	  <!-- ========================================================================================================== -->
-	    <!-- Resume Section -->
+	  
+	    
+
+
+<!--
 	    <section id="contact" class="contact section">
-	
-	      <!-- Section Title -->
+	      
 	      <div class="container section-title" data-aos="fade-up">
 	        <h2>메이플 캐릭터 조회</h2>
 	        <p>메이플스토리에 생성된 캐릭터 이름을 입력하시면 해당 캐릭터에 대한 정보가 조회됩니다.</p>
 
-
-	      </div><!-- End Section Title -->
+	      </div>
  
 	      <div class="container" data-aos="fade-up" data-aos-delay="100">
 	
@@ -1158,10 +1159,8 @@
 	        </div>
 	
 	      </div>
-	    </section><!-- /Resume Section -->
+	    </section>
 	    
-	    
-	    <!-- Service Details Section -->
 	    <section id="service-details" class="service-details portfolio-details section">
 	
 	      <div class="container">
@@ -1196,7 +1195,8 @@
 	
 	      </div>
 	
-	    </section><!-- /Service Details Section -->
+	    </section>
+-->
 		    
 	  </main>
 
@@ -1289,6 +1289,8 @@
 		  
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 		<script>
+			var btn = document.querySelector("input#search");
+			btn.addEventListener("click", getCharacter);
 			
 			function getCharacter() {
 				var chName = nameForm.chName.value; 
