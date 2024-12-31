@@ -102,8 +102,10 @@
 	
 	    <!-- Hero Section -->
 	    <section id="hero" class="hero section dark-background">
-	
-	      <img src="img/cygnus_1920.jpg" alt="" data-aos="fade-in">
+			<!-- 출처: 메이플스토리|미디어|아트윅 (https://maplestory.nexon.com/Media/ArtWork) -->
+<!-- 	      <img src="img/cygnus_1920.jpg" alt="" data-aos="fade-in"> -->
+			<!-- 활용도구: RunwayML -->
+			<img src="img/cygnus.gif" alt="" data-aos="fade-in">
 	
 	      <div class="container">
 	        <div class="row">
@@ -183,13 +185,20 @@
 	
               <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box">
-     				 <img src="#" alt="" class="img-fluid services-img" id="characterImg">          
+                	<!-- 이미지 / 닉네임 / 월드ico / 월드명 / 길드명 / 직업 / 레벨(경험치)
+                	 / 무릉도장 / 유니온 종합레벨, 아티팩트레벨 / 전투력 / 환산 헥사 환산 -->
+     				 <img src="img/mike_character.png" alt="" class="img-fluid services-img" id="characterImg">          
                  	 <h3 id = "characterName">닉네임</h3>
 	
-				     <li><strong>레벨</strong>: &nbsp <span id = "characterLevel">레벨</span></li>
-				     <li><strong>생성일자</strong>: &nbsp <span id = "characterDate">생성일자</span></li>
-     
-                 	 <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor voluptatem</p>
+				     <li><strong>생성일자</strong>: &nbsp <span id = "characterDate">생성일자(D+000)</span></li>
+				     <li><strong>레벨</strong>: &nbsp <span id = "characterLevel">레벨(경험치%)</span></li>
+     				<li><strong>월드</strong>: &nbsp <span id = "characterWorld">월드명</span></li>
+     				<li><strong>길드</strong>: &nbsp <span id = "characterGuild">길드명</span></li>
+     				<li><strong>직업</strong>: &nbsp <span id = "characterJob">직업명</span></li>
+     				<li><strong>무릉도장</strong>: &nbsp <span id = "characterFloor">0층</span></li>
+     				<li><strong>유니온</strong>: &nbsp <span id = "characterUnion">유니온레벨/아티팩트레벨</span></li>
+     				<li><strong>전투력</strong>: &nbsp <span id = "characterPower">전투력</span></li>
+     				
                 </div>
               </div> <!-- End Icon Box -->
 
@@ -1295,8 +1304,7 @@
 			function getCharacter() {
 				var chName = nameForm.chName.value; 
 			// 	console.log(chName);
-			
-				var basicInfoMap = null;
+				var resultObj = null;
 				
 				$.ajax({
 					
@@ -1309,8 +1317,8 @@
 					success: function(data){
 						
 						console.log("success : " + JSON.stringify(data));
-						basicInfoMap = new Map(Object.entries(data));
-						
+						resultObj = new Map(Object.entries(data))
+						resultObj.forEach((value, key, mapObject) => resultObj.set(key, value));
 					},
 				
 					complete : function(data) {
@@ -1323,15 +1331,14 @@
 					}
 					
 				});
+
 				
-			//	basicInfoMap.forEach( (value, key, basicInfoMap) => {
-			//	  console.log(key+":"+value);
-			//	});
+				var basicInfoMap = resultObj.get("basicInfoMap");
 				
-				var characterName = basicInfoMap.get("character_name");
-				var characterLevel = basicInfoMap.get("character_level");
-				var characterCreateDate = basicInfoMap.get("character_date_create").substr(0,10);
-				var characterImg = basicInfoMap.get("character_image");
+				var characterName = basicInfoMap["character_name"];
+				var characterLevel = basicInfoMap["character_level"];
+				var characterCreateDate = basicInfoMap["character_date_create"].substr(0,10);
+				var characterImg = basicInfoMap["character_image"];
 				var imgAction = "A00";	// A00~A07
 				var imgEmotion = "E00";	// E00~E05
 				var imgWmotion = "W00";	// W00~W03
@@ -1354,7 +1361,11 @@
 				$('#characterLevel').text(characterLevel);
 				$('#characterDate').text(characterCreateDate);
 				$('#characterImg').attr("src", characterImg);
-				
+
+				var final_stat = resultObj.get("statMap")["final_stat"];
+				final_stat.forEach((value, key, mapObject) => final_stat[value['stat_name']] = value['stat_value']);
+				var power = final_stat['전투력'];
+				$('#characterPower').text(power);
 			}
 		
 		</script>
