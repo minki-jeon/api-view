@@ -187,7 +187,7 @@
                 <div class="icon-box">
                 	<!-- 이미지 / 닉네임 / 월드ico / 월드명 / 길드명 / 직업 / 레벨(경험치)
                 	 / 무릉도장 / 유니온 종합레벨, 아티팩트레벨 / 전투력 / 환산 헥사 환산 -->
-     				 <img src="img/mike_character.png" alt="" class="img-fluid services-img" id="characterImg">          
+     				 <img src="img/mike_character.png" alt="" class="img-fluid services-img" id="characterImg">     
                  	 <h3 id = "characterName">닉네임</h3>
 	
 				     <li><strong>생성일자</strong>: &nbsp <span id = "characterDate">생성일자(D+000)</span></li>
@@ -204,9 +204,112 @@
 
               <div class="col-md-8" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box">
-                  <i class="bi bi-buildings"></i>
-                  <h3>Eius provident</h3>
-                  <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor voluptatem</p>
+                  <table>
+                  	<tr>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  	</tr>
+                  	<tr>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  	</tr>
+                  	<tr>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  		<td>
+     				 		<img src="img/mike_character.png" alt="" class="img-fluid services-img character-list-img"> 
+                  		</td>
+                  	</tr>
+                  	<tr>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  		<td>
+                 	 		<h3 clasee="character-list-name">닉네임</h3>
+                  		</td>
+                  	</tr>
+                  </table>
                 </div>
               </div> <!-- End Icon Box -->
 	
@@ -1362,10 +1465,15 @@
 				$('#characterDate').text(characterCreateDate);
 				$('#characterImg').attr("src", characterImg);
 
-				var final_stat = resultObj.get("statMap")["final_stat"];
+				var character_stat = resultObj.get("statMap");
+				var character_job = character_stat["character_class"];
+				var final_stat = character_stat["final_stat"];
 				final_stat.forEach((value, key, mapObject) => final_stat[value['stat_name']] = value['stat_value']);
 				var power = final_stat['전투력'];
 				$('#characterPower').text(power);
+				$('#characterJob').text(character_job);
+				
+				var character_list = resultObj.get("listMap")["account_list"][0]["character_list"];
 			}
 		
 		</script>

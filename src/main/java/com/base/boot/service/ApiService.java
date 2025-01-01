@@ -213,6 +213,66 @@ public class ApiService {
 		
 		return dataMap;
 	}
+
+	
+	//* 캐릭터 목록 조회
+	public Map<String, Object> getList() {
+		
+		Map<String, Object> dataMap = new HashMap<String, Object> ();
+
+    	try {
+    		String API_KEY = __mapleKey__;
+	        String urlString = "https://open.api.nexon.com/maplestory/v1/character/list";
+
+            URL url = new URL(urlString);
+      
+            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("x-nxopen-api-key", API_KEY);
+      
+            int responseCode = connection.getResponseCode();
+      
+            BufferedReader in;
+            if(responseCode == 200) {
+              in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            } else {
+              in = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
+            }
+      
+            String inputLine;
+            StringBuffer responseData = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+            	responseData.append(inputLine);
+            }
+            in.close();
+      
+            String stringData = responseData.toString();
+            
+         // 2.Parser
+            JSONParser jsonParser = new JSONParser();
+
+            // 3. To Object
+            Object obj = null;
+            try {
+                obj = jsonParser.parse(responseData.toString());
+            } catch (ParseException e) {
+//                log.error("JSON parsing 에러 :: " + e);
+            }
+
+            // 4. To Map
+            ObjectMapper objectMapper = new ObjectMapper();
+            TypeReference<Map<String, Object>> typeReference = new TypeReference<Map<String,Object>>() {};
+
+            dataMap =  objectMapper.readValue(stringData, typeReference);
+            
+            
+          } catch (Exception exception) {
+            System.out.println(exception);
+          }
+		
+		
+		return dataMap;
+	}
 	
 
 	public Map<String, Object> getCharacter(String name) {
@@ -223,9 +283,11 @@ public class ApiService {
     	String ocid = getOcid(name);
     	Map<String, Object> basicInfoMap = getBasicInfo(ocid);
     	Map<String, Object> statMap = getStat(ocid);
+    	Map<String, Object> listMap = getList();
     	
     	resultMap.put("basicInfoMap", basicInfoMap);
     	resultMap.put("statMap", statMap);
+    	resultMap.put("listMap", listMap);
 		
 		
 		return resultMap;
